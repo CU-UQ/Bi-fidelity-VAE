@@ -274,36 +274,3 @@ class BFVAE(BaseVAE):
     
         return losses
     
-if __name__ == '__main__':
-    import matplotlib.pyplot as plt
-    
-    # import test data
-    path = '../Data/beam_data.npz'
-    file = np.load(path)
-    idx = np.linspace(0, 512, 128).astype('int')
-    xL = torch.from_numpy(file['beam_yL'][:10,idx]).type(torch.FloatTensor)
-    xL2 = torch.from_numpy(file['beam_yL'][:4000,idx]).type(torch.FloatTensor)
-    xH = torch.from_numpy(file['beam_yH'][:10,idx]).type(torch.FloatTensor)
-    
-    bf_trn_data = BFDataset(xL,xH)
-    
-    _,input_dim = xH.shape
-    latent_dim = 4
-    hidden_dims = [64, 16]
-    beta = 1.25
-    
-    batch_size = 128
-    hf_trn_dataloader = DataLoader(xH, batch_size=batch_size, shuffle=False)
-    lf_trn_dataloader = DataLoader(xL2, batch_size=batch_size, shuffle=False)
-    bf_trn_dataloader = DataLoader(bf_trn_data, batch_size=batch_size, shuffle=False)
-    
-    # claim and train hfvae
-    hfvae = VAE(input_dim,latent_dim,hidden_dims,beta)
-    hf_loss = hfvae.train(xH, batch_size=batch_size, epochs=1000)
-    
-    # claim and train bfvae
-    lfvae = VAE(input_dim,latent_dim,hidden_dims,beta)
-    lf_loss = lfvae.train(xL2, batch_size=batch_size, epochs=2000)
-    bfvae = BFVAE(lfvae)
-    bf_loss = bfvae.train(bf_trn_data, batch_size=batch_size, epochs=1000)
-    
