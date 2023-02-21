@@ -3,16 +3,13 @@
 """
 
 from typing import List, Any, Tuple
-from torch import nn
+from torch import nn, Tensor
 import torch
 from torch.nn import functional as F
 from torch.utils.data import DataLoader
 import copy
 import tqdm
 import numpy as np
-
-Tensor = torch.Tensor
-
 
 class BFDataset(torch.utils.data.Dataset):
     
@@ -96,9 +93,6 @@ class VAE(BaseVAE):
 
     def encode(self, x: Tensor) -> List[Tensor]:
         result = self.encoder(x)
-
-        # Split the result into mu and var components
-        # of the latent Gaussian distribution
         mu = self.fc_mu(result)
         log_var = self.fc_var(result)
 
@@ -200,12 +194,9 @@ class BFVAE(BaseVAE):
         for param in self.decoder.parameters():
             param.requires_grad = False
 
-    def encode(self, input: Tensor) -> List[Tensor]:
-        result = self.encoder(input)
+    def encode(self, data: Tensor) -> List[Tensor]:
+        result = self.encoder(data)
         result = torch.flatten(result, start_dim=1)
-
-        # Split the result into mu and var components
-        # of the latent Gaussian distribution
         mu = self.fc_mu(result)
         log_var = self.fc_var(result)
 
