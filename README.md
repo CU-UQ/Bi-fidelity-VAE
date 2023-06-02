@@ -1,4 +1,28 @@
 # Bi-fidelity Variational Auto-encoder
+
+This repo contains code for our paper 
+> N. Cheng, O. A. Malik, S. Becker, A. Doostan.
+> *Bi-fidelity Variational Auto-encoder for Uncertainty Quantification*.
+> **arXiv preprint arXiv:2305.16530**,
+> 2023.
+
+The paper is available at [arXiv](https://arxiv.org/abs/2305.16530).
+
+## Referencing this code
+
+If you use this code in any of your own work, please reference our paper:
+```
+@misc{cheng2023bifidelity,
+      title={Bi-fidelity Variational Auto-encoder for Uncertainty Quantification}, 
+      author={\textbf{N. Cheng} and Osman Asif Malik and Stephen Becker and Alireza Doostan},
+      year={2023},
+      eprint={2305.16530},
+      archivePrefix={arXiv},
+      url={https://arxiv.org/abs/2305.16530},
+      primaryClass={stat.ML}
+}
+```
+
 ## Description of code 
 ### Main file 
 
