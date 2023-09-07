@@ -62,7 +62,7 @@ class VAE(BaseVAE):
             modules.append(
                 nn.Sequential(
                     nn.Linear(in_channels, h_dim),
-                    nn.ReLU())
+                    nn.GELU())
             )
             in_channels = h_dim
 
@@ -82,7 +82,7 @@ class VAE(BaseVAE):
             modules.append(
                 nn.Sequential(
                     nn.Linear(hidden_dims[i],hidden_dims[i + 1]),
-                    nn.ReLU())
+                    nn.GELU())
             )
 
 
