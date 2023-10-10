@@ -148,8 +148,8 @@ class VAE(BaseVAE):
         opt = torch.optim.Adam(self.parameters(), lr=1e-3, betas= (0.9, 0.99))
         losses = []
         with tqdm.tqdm(range(epochs), unit=' Epoch') as tepoch:
-            epoch_loss = 0
             for epoch in tepoch:
+                epoch_loss = 0
                 for batch_index, data in enumerate(trn_dataloader):
                     opt.zero_grad()
                     trn_loss = self.loss_function(data)['loss']
@@ -249,8 +249,8 @@ class BFVAE(BaseVAE):
         opt = torch.optim.Adam(self.parameters(), lr=1e-3, betas= (0.9, 0.99))
         losses = []
         with tqdm.tqdm(range(epochs), unit=' Epoch') as tepoch:
-            epoch_loss = 0
             for epoch in tepoch:
+                epoch_loss = 0
                 for batch_index, data in enumerate(trn_dataloader):
                     opt.zero_grad()
                     trn_loss = self.loss_function(data)
