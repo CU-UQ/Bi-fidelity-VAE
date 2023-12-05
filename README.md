@@ -42,7 +42,7 @@ If you use this code in any of your own work, please reference our paper:
 
 ## Data
 
-The bi-fidelity data is available in this [link](https://zenodo.org/record/7662729). 
+The bi-fidelity data is available in this [link](https://zenodo.org/record/10263107). 
 
 ## Author contact information
 
