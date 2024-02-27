@@ -3,8 +3,8 @@
 This repo contains code for our paper 
 > N. Cheng, O. A. Malik, S. Becker, A. Doostan.
 > *Bi-fidelity Variational Auto-encoder for Uncertainty Quantification*.
-> **arXiv preprint arXiv:2305.16530**,
-> 2023.
+> **Computer Methods in Applied Mechanics and Engineering**,
+> 2024.
 
 The paper is available at [arXiv](https://arxiv.org/abs/2305.16530) and [DOI](https://doi.org/10.1016/j.cma.2024.116793).
 
