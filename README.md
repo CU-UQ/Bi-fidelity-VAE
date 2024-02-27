@@ -6,20 +6,20 @@ This repo contains code for our paper
 > **arXiv preprint arXiv:2305.16530**,
 > 2023.
 
-The paper is available at [arXiv](https://arxiv.org/abs/2305.16530).
+The paper is available at [arXiv](https://arxiv.org/abs/2305.16530) and [DOI](https://doi.org/10.1016/j.cma.2024.116793).
 
 ## Referencing this code
 
 If you use this code in any of your own work, please reference our paper:
 ```
-@misc{cheng2023bifidelity,
-      title={Bi-fidelity Variational Auto-encoder for Uncertainty Quantification}, 
-      author={\textbf{N. Cheng} and Osman Asif Malik and Stephen Becker and Alireza Doostan},
-      year={2023},
-      eprint={2305.16530},
-      archivePrefix={arXiv},
-      url={https://arxiv.org/abs/2305.16530},
-      primaryClass={stat.ML}
+@article{cheng2024bi,
+  title={Bi-fidelity variational auto-encoder for uncertainty quantification},
+  author={Cheng, Nuojin and Malik, Osman Asif and De, Subhayan and Becker, Stephen and Doostan, Alireza},
+  journal={Computer Methods in Applied Mechanics and Engineering},
+  volume={421},
+  pages={116793},
+  year={2024},
+  publisher={Elsevier}
 }
 ```
 
