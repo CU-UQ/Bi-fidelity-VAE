@@ -123,7 +123,7 @@ class VAE(BaseVAE):
         data_hat = self.forward(data)[0]
         recons_loss = ((data - data_hat)**2).sum()
 
-        kld_loss = torch.sum(-0.5 * (1 + log_var - mu ** 2 - torch.exp(2 * log_var)))
+        kld_loss = torch.sum(-0.5 * (1 + log_var - mu ** 2 - torch.exp(log_var)))
 
         loss = recons_loss + self.beta * kld_loss
         return {'loss': loss, 'Reconstruction_Loss':recons_loss.detach(), 'KLD':-kld_loss.detach()}
